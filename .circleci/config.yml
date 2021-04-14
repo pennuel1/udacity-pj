@@ -1,15 +1,14 @@
 version: 2.1
 
 jobs:
-   print_hello:
-     docker:
+  print_hello:
+    docker:
      - image: circleci/node:13.8.0
-     steps:
-       - run:
-       name: echo hello 
+    steps:
+      - run: echo hello 
    print_world:
      docker:
-     - image: circleci/node13.8.0
+      - image: circleci/node13.8.0
      steps:
        - run: echo world
 
