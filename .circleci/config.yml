@@ -18,3 +18,21 @@ workflows:
       - print_world:
            requires:
               - print_hello
+
+
+workflows:
+  test_env_var:
+    jobs:
+      - build
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2020.01
+    steps:
+      - checkout
+      - run:
+          name: "echo an env var that is apart pf out project"
+          command: |
+            echo $test_env_var
+                  
