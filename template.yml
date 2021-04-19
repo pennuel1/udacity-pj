@@ -7,7 +7,7 @@ Resources:
      KeyName: udacitykey
      ImageId: ami-068663a3c619dd892
 Resources:
- Instance Security Group:
+ InstanceSecurityGroup:
    Type: AWS::EC2::SecurityGroup
    Properties:
      GroupDescription: Enable SSH access via port 22
