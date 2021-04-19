@@ -11,6 +11,7 @@ jobs:
             aws cloudformation deploy
               --template-file deploy \
               --stack-name my-stack
+
 workflow:
   my_workflow:
     jobs:
