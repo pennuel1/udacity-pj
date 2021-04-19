@@ -15,7 +15,7 @@ jobs:
           name: Configure server
           command: |
             ansible-playbook -i inventory.txt playbook.yml
-jobs:
+
   smoke_test:
      docker:
        - image: alpine latest
