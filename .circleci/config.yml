@@ -13,7 +13,7 @@ jobs:
               --template-file deploy \
               --stack-name my-stack
 
-workflow:
+workflows:
   my_workflow:
     jobs:
       - create_infrastructure
