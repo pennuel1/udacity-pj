@@ -1,22 +1,25 @@
 version: 2.1
 
-jobs:
-   configure_infrastructure:
-     docker:
-       - image: python:3.7-alpine3.11
-     steps:
-       - checkout
-       - add_ssh_keys:
-           fingerprints:
-             - ["fb:97:1e:c2:f0:ad:8c:85:77:57:64:b7:21:44:2b:c6"]
-       - run:
-           name: install dependencies
-           command: |
-             apk add --update ansible
-       - run: 
-           name: Configure server
-           command: |
-             anisible-playbook -i inventory.txt playbook.yml
+jobs: 
+  configure_infrastructure: 
+    docker: 
+      - 
+        image: "python:3.7-alpine3.11"
+    steps: 
+      - checkout
+      - 
+        add_ssh_keys: 
+          fingerprints: 
+            - 
+              - "fb:97:1e:c2:f0:ad:8c:85:77:57:64:b7:21:44:2b:c6"
+      - 
+       run: 
+          command: "apk add --update ansible\n"
+          name: "install dependencies"
+      - 
+        run: 
+          command: "anisible-playbook -i inventory.txt "
+          name: "Configure server"
 
 
 workflows:
