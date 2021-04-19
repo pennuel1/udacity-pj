@@ -1,4 +1,4 @@
-Parameter: {CREATE}
+
 Resources:
   Ec2Instance:
    Type: AWS::EC2::Instance
@@ -7,8 +7,6 @@ Resources:
        - !Ref InstanceSecurityGroup
      KeyName: udacitykey
      ImageId: ami-068663a3c619dd892
-
-Parameter: {CREATE}
 InstanceSecurityGroup:
   Type: AWS::EC2::SecurityGroup
   Properties:
