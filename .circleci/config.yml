@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
   create_infrastructure:
     docker:
@@ -8,7 +9,7 @@ jobs:
       - run:
           name: ensure backend infastructure exist
           command: |
-            aws cloudformation deploy
+            aws cloudformation deploy \
               --template-file deploy \
               --stack-name my-stack
 
