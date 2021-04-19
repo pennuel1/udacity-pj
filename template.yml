@@ -1,4 +1,4 @@
---- 
+mod+: {}
 resources: 
   Ec2Instance: 
     Properties: 
@@ -7,7 +7,7 @@ resources:
       SecurityGroups: 
         - InstanceSecurityGroup
     Type: "AWS::EC2::Instance"
- instanceSecurityGroup: 
+instanceSecurityGroup: 
    Type: "AWS::EC2::SecurityGroup"
    Properties: 
      GroupDescription: "Enable SSH access via port 22"
@@ -18,3 +18,4 @@ resources:
          IpProtocol: tcp
          ToPort: "22"
   
+
