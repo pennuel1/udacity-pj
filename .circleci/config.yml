@@ -1,20 +1,20 @@
 version: 2.1
-# jobs:
-#   configure_infrastructure:
-#     docker:
-#       - image: python:3.7-alpine3.11
-#     steps:
-#       - checkout
-#       - add_ssh_keys:
-#           fingerprints: ["fb:97:1e:c2:f0:ad:8c:85:77:57:64:b7:21:44:2b:c6"] # You can get this ID in the section where you registered the SSH Key
-#       - run:
-#           name: Install dependencies
-#           command: |
-#             apk add --update ansible # install the dependencies needed for your playbook
-#       - run:
-#           name: Configure server
-#           command: |
-#             ansible-playbook -i inventory.txt playbook.yml
+jobs:
+  configure_infrastructure:
+    docker:
+      - image: python:3.7-alpine3.11
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints: ["fb:97:1e:c2:f0:ad:8c:85:77:57:64:b7:21:44:2b:c6"] # You can get this ID in the section where you registered the SSH Key
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --update ansible # install the dependencies needed for your playbook
+      - run:
+          name: Configure server
+          command: |
+            ansible-playbook -i inventory.txt playbook.yml
 jobs:
   smoke_test:
      docker:
