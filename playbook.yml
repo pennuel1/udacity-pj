@@ -1,6 +1,0 @@
----
-- name: Exercise #1
-  hosts: Ubuntu Server 20.04 LTS
-
-  roles:
-   - print
